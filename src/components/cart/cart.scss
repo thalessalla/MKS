@@ -1,0 +1,256 @@
+@import "../../index.scss";
+
+.container-cart-items {
+  margin-bottom: 4rem;
+  height: 55vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .msg-cart {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+}
+
+.cart-menu {
+  background-color: $secondary-color;
+  display: flex;
+  height: 40px;
+  width: 90px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: $border-card;
+  border: none;
+  transition: background-color 0.3s;
+  &:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+  }
+}
+
+.cart-item {
+  position: relative;
+  img {
+    width: 80px;
+  }
+  div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  background-color: $secondary-color;
+  display: flex;
+  border-radius: $border-card;
+  margin-bottom: 24px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 14px;
+  position: relative;
+  gap: 1rem;
+}
+
+.remove {
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  border-radius: 50%;
+  background-color: #000;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  transition: font-size 0.3s;
+  &:hover {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}
+
+.product-name {
+  width: 180px;
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 12ch;
+  }
+}
+
+.product-qtd {
+  p {
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
+
+.qtd-counter {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  border: solid 1px #bfbfbf;
+  height: 28px;
+  margin-top: 4px;
+  p {
+    margin: 0;
+    border-left: solid 1px #bfbfbf;
+    border-right: solid 1px #bfbfbf;
+    margin: 4px 0;
+    padding: 0 8px;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s;
+    height: 28px;
+  }
+  button:hover {
+    background-color: #f2f1f1;
+    cursor: pointer;
+  }
+  > div {
+    width: 30px;
+  }
+}
+
+.product-price {
+  font-weight: 700;
+  font-size: 1rem;
+  width: 200px;
+}
+
+.cart-icon {
+  button {
+    img {
+      height: 18px;
+    }
+  }
+}
+
+.price-checkout {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.checkout-container {
+  margin-bottom: 4rem;
+  position: absolute;
+  bottom: 2rem;
+  width: 80%;
+}
+
+// Drawer
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 486px;
+  height: 100%;
+  background-color: $primary-color;
+  box-shadow: -5px 0px 6px 0px rgba(0, 0, 0, 0.13);
+  z-index: 1000;
+  transition: all 0.2s;
+  height: 100vh;
+}
+
+.content-drawer {
+  padding: 36px;
+  height: 80%;
+}
+
+.close-btn {
+  border-radius: 50%;
+  background-color: #000;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  transition: font-size 0.3s;
+  height: 1.5rem;
+  &:hover {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}
+
+.header-cart {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  h2 {
+    color: #fff;
+    font-size: 2rem;
+  }
+}
+
+.checkout-btn {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #000;
+  color: #fff;
+  height: 4rem;
+  font-size: 1.3rem;
+  border: none;
+  transition: background-color 0.3s;
+  &:hover {
+    cursor: pointer;
+    background-color: #303030;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: "800px") {
+  .drawer {
+    width: 320px;
+  }
+  .cart-item {
+    padding: 20px 14px;
+    flex-wrap: wrap;
+    gap: 0rem;
+    justify-content: space-between;
+  }
+  .content-drawer {
+    padding: 0;
+  }
+
+  .cart-item {
+    div:first-child {
+      gap: 0rem;
+    }
+  }
+
+  .checkout-container {
+    width: 90%;
+    right: 20px;
+  }
+
+  .header-cart {
+    padding: 0 20px;
+    margin-top: 2rem;
+  }
+  .product-qtd {
+    position: absolute;
+    right: 10px;
+  }
+  .product-name {
+    min-width: 200px;
+  }
+}

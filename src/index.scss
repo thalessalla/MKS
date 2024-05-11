@@ -1,0 +1,18 @@
+$primary-color: #0f52ba;
+$secondary-color: #ffffff;
+$bkg-color: #f9f9f9;
+$text-color-card: #2c2c2c;
+$border-card: 0.5rem;
+
+body {
+  background-color: $bkg-color;
+  margin: 0;
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0.5rem 0;
+    font-family: "Montserrat", sans-serif;
+  }
+}

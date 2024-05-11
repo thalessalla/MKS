@@ -1,0 +1,28 @@
+@import "../../index.scss";
+
+.header {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1220px;
+    margin: 0 auto;
+    align-items: center;
+    height: 4rem;
+    padding: 0 20px;
+  }
+
+  background-color: $primary-color;
+}
+
+.logo-header {
+  color: $secondary-color;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.cart-icon {
+  p {
+    font-weight: 700;
+  }
+}
