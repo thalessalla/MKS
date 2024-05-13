@@ -48,7 +48,7 @@
   div:first-child {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.2rem;
   }
   background-color: $secondary-color;
   display: flex;
@@ -78,7 +78,7 @@
 }
 
 .product-name {
-  width: 180px;
+  width: 170px;
   p {
     font-size: 1rem;
     font-weight: 400;
@@ -149,8 +149,10 @@
 .checkout-container {
   margin-bottom: 4rem;
   position: absolute;
-  bottom: 2rem;
-  width: 80%;
+  bottom: 1rem;
+  width: 380px;
+  padding: 1rem;
+  background-color: $primary-color;
 }
 
 // Drawer
@@ -238,8 +240,7 @@
   }
 
   .checkout-container {
-    width: 90%;
-    right: 20px;
+    width: 288px;
   }
 
   .header-cart {
