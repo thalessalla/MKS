@@ -2,6 +2,8 @@ import { useCart } from "../../contexts/cartContext";
 import "./card.scss";
 import Shopping from "../../assets/shopping-bag.svg";
 import "react-toastify/dist/ReactToastify.css";
+import { Alert, Snackbar } from "@mui/material";
+import { useState } from "react";
 
 interface Props {
   name: string;
@@ -13,6 +15,15 @@ interface Props {
 
 export function Card({ name, price, description, id, photo }: Props) {
   const { addToCart } = useCart();
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleAddToCart = () => {
     const item = {
@@ -25,6 +36,7 @@ export function Card({ name, price, description, id, photo }: Props) {
     };
 
     addToCart(item);
+    handleClick();
   };
 
   return (
@@ -49,6 +61,17 @@ export function Card({ name, price, description, id, photo }: Props) {
           COMPRAR
         </button>
       </div>
+
+      <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+          Produto adicionado ao carrinho
+        </Alert>
+      </Snackbar>
     </>
   );
 }
